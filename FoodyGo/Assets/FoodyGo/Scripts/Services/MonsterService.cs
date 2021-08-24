@@ -63,16 +63,21 @@ namespace packt.FoodyGO.Services
                     if(list[i].spawnTimestamp + monsterLifetimeSeconds < now)
                     {
                         var monster = list[i];
-                        print("Cleaning up monster");
-                        if(monster.gameObject != null)
-                        {
-                            Destroy(monster.gameObject);
-                        }
-                        monsters.Remove(monster);
+                        RemoveMonster(monster);
                     }
                 }
                 yield return new WaitForSeconds(5);
             }
+        }
+
+        public void RemoveMonster(MonsterSpawnLocation monster)
+        {
+            print("Cleaning up monster ");
+            if (monster.gameObject != null)
+            {
+                Destroy(monster.gameObject);
+            }
+            monsters.Remove(monster);
         }
 
         // Update is called once per frame
@@ -151,6 +156,8 @@ namespace packt.FoodyGO.Services
             return 4;
         }
 
+        
+
         private Vector3 ConvertToWorldSpace(float longitude, float latitude)
         {
             //convert GPS lat/long to world x/y 
@@ -169,8 +176,10 @@ namespace packt.FoodyGO.Services
             var rotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
             monster.gameObject = (GameObject)Instantiate(monsterPrefab, position, rotation);
             var controller = monster.gameObject.AddComponent<MonsterController>();
-            controller.monsterDataObject = monster;
+            controller.monsterSpawnLocation = monster;
             controller.monsterService = this;
+            monster.gameObject.transform.parent = transform;
         }
+        
     }
 }

@@ -1,5 +1,5 @@
+﻿using UnityEngine;
 using packt.FoodyGO.Database;
-using UnityEngine;
 
 namespace packt.FoodyGO.Services
 {
@@ -11,15 +11,15 @@ namespace packt.FoodyGO.Services
             "Sous",
             "Poulet",
             "Duck",
-            "Dish",
+            "Slice",
             "Sauce",
             "Bacon",
             "Benedict",
             "Beef",
             "Sage"
-        };
-        
-        public static string[] skills = 
+            };
+
+        public static string[] skills =
         {
             "French",
             "Chinese",
@@ -39,9 +39,9 @@ namespace packt.FoodyGO.Services
             "Chicken"
         };
 
-        public static int power = 10;
-        public static int level = 10;
-
+        public static int power = 1;
+        public static int level = 1;        
+        
         public static Monster CreateRandomMonster()
         {
             var monster = new Monster

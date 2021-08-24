@@ -5,29 +5,41 @@ ScriptsOnlyBuild:
     - UnityStandardAssets.CrossPlatformInput.TouchPad
     - UnityStandardAssets.Effects.ExplosionPhysicsForce
     - UnityStandardAssets.Effects.ParticleSystemMultiplier
+    - UnityStandardAssets.Utility.ParticleSystemDestroyer
     Assembly-CSharp.dll:
     - CUDLR.Server
     - packt.FoodyGO.Controllers.CatchSceneController
+    - packt.FoodyGO.Controllers.InventorySceneController
     - packt.FoodyGO.Controllers.MonsterController
+    - packt.FoodyGO.Managers.GameManager
     - packt.FoodyGO.PhysicsExt.CollisionAction
     - packt.FoodyGO.PhysicsExt.CollisionReaction
     - packt.FoodyGO.Services.InventoryService
     - packt.FoodyGO.TouchInput.ThrowTouchPad
     - packt.FoodyGO.UI.CameraTextureOnRawImage
+    - packt.FoodyGO.UI.HomeButton
+    - packt.FoodyGO.UI.InventoryContent
+    - packt.FoodyGO.UI.MonsterInventoryItem
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    Unity.Timeline.Editor.dll:
-    - TimelinePreferences
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.AspectRatioFitter
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
     - UnityEngine.UI.RawImage
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Catch.unity:
@@ -66,39 +78,41 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1480}
+      Script: {instanceID: 1488}
     - Class: 114
-      Script: {instanceID: 1482}
+      Script: {instanceID: 1490}
     - Class: 114
-      Script: {instanceID: 1520}
+      Script: {instanceID: 1530}
     - Class: 114
-      Script: {instanceID: 2038}
+      Script: {instanceID: 2050}
     - Class: 114
-      Script: {instanceID: 2150}
+      Script: {instanceID: 2162}
     - Class: 114
-      Script: {instanceID: 2324}
+      Script: {instanceID: 2338}
     - Class: 114
-      Script: {instanceID: 2346}
+      Script: {instanceID: 2360}
     - Class: 114
-      Script: {instanceID: 2418}
+      Script: {instanceID: 2432}
     - Class: 114
-      Script: {instanceID: 2596}
+      Script: {instanceID: 2610}
     - Class: 114
-      Script: {instanceID: 2626}
+      Script: {instanceID: 2640}
     - Class: 114
-      Script: {instanceID: 2794}
+      Script: {instanceID: 2880}
     - Class: 114
-      Script: {instanceID: 2920}
+      Script: {instanceID: 2936}
     - Class: 114
-      Script: {instanceID: 3072}
+      Script: {instanceID: 3088}
     - Class: 114
-      Script: {instanceID: 3446}
+      Script: {instanceID: 3436}
     - Class: 114
-      Script: {instanceID: 3528}
+      Script: {instanceID: 3466}
     - Class: 114
-      Script: {instanceID: 4248}
+      Script: {instanceID: 3548}
     - Class: 114
-      Script: {instanceID: 20838}
+      Script: {instanceID: 4272}
+    - Class: 114
+      Script: {instanceID: 17748}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -116,6 +130,145 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Game.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 2442}
+    - Class: 114
+      Script: {instanceID: 2796}
+    - Class: 114
+      Script: {instanceID: 2808}
+    - Class: 114
+      Script: {instanceID: 3136}
+    - Class: 114
+      Script: {instanceID: 4130}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    Assets/Inventory.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1488}
+    - Class: 114
+      Script: {instanceID: 1490}
+    - Class: 114
+      Script: {instanceID: 1530}
+    - Class: 114
+      Script: {instanceID: 2162}
+    - Class: 114
+      Script: {instanceID: 2338}
+    - Class: 114
+      Script: {instanceID: 2804}
+    - Class: 114
+      Script: {instanceID: 2880}
+    - Class: 114
+      Script: {instanceID: 3044}
+    - Class: 114
+      Script: {instanceID: 3610}
+    - Class: 114
+      Script: {instanceID: 3738}
+    - Class: 114
+      Script: {instanceID: 4450}
+    - Class: 114
+      Script: {instanceID: 17754}
+    - Class: 114
+      Script: {instanceID: 17756}
+    - Class: 114
+      Script: {instanceID: 17758}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Splash.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1488}
+    - Class: 114
+      Script: {instanceID: 1490}
+    - Class: 114
+      Script: {instanceID: 1530}
+    - Class: 114
+      Script: {instanceID: 2338}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -296,7 +449,7 @@ ScriptsOnlyBuild:
     className: ProtectCameraFromWallClip
   - hash:
       serializedVersion: 2
-      Hash: a818dbdb0057f4e8d7ac841c57c4a4e0
+      Hash: 86b5c8000624ab34a7f94ec0c87e79da
     assemblyName: Assembly-CSharp.dll
     namespaceName: packt.FoodyGO.Controllers
     className: CatchSceneController
@@ -698,7 +851,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 580ae66a37e812e92743fe6386387764
+      Hash: 061329d90e6aada407ceecc4d4ad2f9e
     assemblyName: Assembly-CSharp.dll
     namespaceName: packt.FoodyGO.Managers
     className: GameManager
@@ -1022,6 +1175,12 @@ ScriptsOnlyBuild:
     className: ActivateTrigger
   - hash:
       serializedVersion: 2
+      Hash: 0071403b3c9b5084fb81c6c6a449d064
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: packt.FoodyGO.Services
+    className: InventoryService
+  - hash:
+      serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1130,11 +1289,38 @@ ScriptsOnlyBuild:
     className: SimpleActivatorMenu
   - hash:
       serializedVersion: 2
-      Hash: 0071403b3c9b5084fb81c6c6a449d064
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: packt.FoodyGO.Services
-    className: InventoryService
+    namespaceName: packt.FoodyGO.UI
+    className: HomeButton
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: packt.FoodyGO.UI
+    className: InventoryItem
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: packt.FoodyGO.UI
+    className: MonsterInventoryItem
+  - hash:
+      serializedVersion: 2
+      Hash: 6943471f3001e052c52406ca9b941eb5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: packt.FoodyGO.UI
+    className: InventoryContent
+  - hash:
+      serializedVersion: 2
+      Hash: e3f121bc80ef748a80e56cb44025820a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: packt.FoodyGO.Controllers
+    className: InventorySceneController
   platform: 13
   scenePathNames:
+  - Assets/Game.unity
+  - Assets/Splash.unity
   - Assets/Catch.unity
+  - Assets/Inventory.unity
   playerPath: C:/unityproject/FoodyGo/FoodyGO.apk

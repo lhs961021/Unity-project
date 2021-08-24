@@ -17,7 +17,8 @@ namespace packt.FoodyGO.Services
         private SQLiteConnection _connection;
         
         // Use this for initialization
-        void Start()
+        //use Awake instead of Start for earlier initialization
+        void Awake()
         {
 #if UNITY_EDITOR
         var dbPath = string.Format(@"Assets/StreamingAssets/{0}", DatabaseName);
@@ -163,7 +164,8 @@ namespace packt.FoodyGO.Services
 
         public Monster ReadMonster(int id)
         {
-            return _connection.Table<Monster>().Where(m => m.Id == id).FirstOrDefault();
+            return _connection.Table<Monster>()
+                .Where(m => m.Id == id).FirstOrDefault();
         }
 
         public IEnumerable<Monster> ReadMonsters()
@@ -180,7 +182,6 @@ namespace packt.FoodyGO.Services
         {
             return _connection.Delete(m);
         }
-
 
     }
 }

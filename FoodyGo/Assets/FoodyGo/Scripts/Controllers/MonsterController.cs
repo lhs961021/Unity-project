@@ -10,9 +10,9 @@ namespace packt.FoodyGO.Controllers
     {
         public MapLocation location;
         public MonsterService monsterService;
-        public MonsterSpawnLocation monsterDataObject;
+        public MonsterSpawnLocation monsterSpawnLocation;
         public Animation anim;
-        public float animationSpeed;
+        public float animationSpeed = 1;
         public float monsterWarmRate = .0001f;
         
         // Use this for initialization

@@ -29,7 +29,7 @@ namespace packt.FoodyGO.Controllers
             catching = true;
 
             StartCoroutine(CheckEscape());
-        }
+        }  
 
         IEnumerator CheckEscape()
         {
@@ -41,18 +41,47 @@ namespace packt.FoodyGO.Controllers
                     catching = false;
                     print("Monster ESCAPED");
                     monster.gameObject.SetActive(false);
-                    Instantiate(escapeParticlePrefab);
+                    //updated code needed to store particle
+                    //set parent and then destroy object after a delay
+                    var escape = Instantiate(escapeParticlePrefab);
+                    escape.parent = transform;
+                    Destroy(escape.gameObject, 5);
                     foreach (var g in frozenDisableList)
                     {
                         g.SetActive(false);
                     }
+                    StartCoroutine(CloseScene());
                 }
             }
-        }  
+        }
+
+        IEnumerator CloseScene()
+        {
+            //delay 5 seconds before closing scene
+            yield return new WaitForSeconds(5);
+            StopAllCoroutines();
+            GameManager.Instance.CloseMe(this);
+        }
+
+        public void ResetScene()
+        {
+            foreach (var g in frozenDisableList)
+            {
+                g.SetActive(true);
+            }
+            foreach (var g in frozenEnableList)
+            {
+                g.SetActive(false);
+            }
+
+            monster.animationSpeed = 1;
+            Start();
+        }
 
         public void OnMonsterHit(GameObject go, Collision collision)
         {
-            monster = go.GetComponent<MonsterController>();
+            monster = go.GetComponent<MonsterController>();            
+
             if (monster != null)
             {
                 monster.monsterWarmRate = monsterWarmRate;
@@ -62,10 +91,14 @@ namespace packt.FoodyGO.Controllers
                 if (monster.animationSpeed == 0)
                 {
                     print("Monster FROZEN");
+                    //save the monster in the player inventory
                     InventoryService.Instance.CreateMonster(monsterProps);
 
-
-                    Instantiate(frozenParticlePrefab);
+                    //updated code needed to store particle
+                    //set parent and then destroy object after a delay
+                    var frozen = Instantiate(frozenParticlePrefab);
+                    frozen.parent = transform;
+                    Destroy(frozen.gameObject, 5);
 
                     foreach(var g in frozenDisableList)
                     {
@@ -75,6 +108,7 @@ namespace packt.FoodyGO.Controllers
                     {
                         g.SetActive(true);
                     }
+                    StartCoroutine(CloseScene());
                 }
             }
         }

@@ -29,12 +29,12 @@ namespace packt.FoodyGO.Services
         public float twoStepRange = 150f;
         public float threeStepRange = 200f;
 
-        public List<Monster> monsters;
+        public List<MonsterSpawnLocation> monsters;
         
         // Use this for initialization
         void Start()
         {
-            monsters = new List<Monster>();
+            monsters = new List<MonsterSpawnLocation>();
             StartCoroutine(CleanupMonsters());
             gpsLocationService.OnMapRedraw += GpsLocationService_OnMapRedraw;
         }
@@ -42,7 +42,7 @@ namespace packt.FoodyGO.Services
         private void GpsLocationService_OnMapRedraw(GameObject g)
         {
             //map is recentered, recenter all monsters
-            foreach(Monster m in monsters)
+            foreach(MonsterSpawnLocation m in monsters)
             {
                 if(m.gameObject != null)
                 {
@@ -95,7 +95,7 @@ namespace packt.FoodyGO.Services
             {
                 var mlat = gpsLocationService.Latitude + Random.Range(-latitudeSpawnOffset, latitudeSpawnOffset);
                 var mlon = gpsLocationService.Longitude + Random.Range(-longitudeSpawnOffset, longitudeSpawnOffset);
-                var monster = new Monster
+                var monster = new MonsterSpawnLocation
                 {
                     location = new MapLocation(mlon, mlat),
                     spawnTimestamp = gpsLocationService.PlayerTimestamp
@@ -108,7 +108,7 @@ namespace packt.FoodyGO.Services
             //get the current Epoch time in seconds
             var now = Epoch.Now;
 
-            foreach (Monster m in monsters)
+            foreach (MonsterSpawnLocation m in monsters)
             {
                 var d = MathG.Distance(m.location, playerLocation);
                 if (MathG.Distance(m.location, playerLocation) < monsterSeeDistance)
@@ -161,7 +161,7 @@ namespace packt.FoodyGO.Services
             return new Vector3(-x, 0, y);
         }
 
-        private void SpawnMonster(Monster monster)
+        private void SpawnMonster(MonsterSpawnLocation monster)
         {            
             var lon = monster.location.Longitude;
             var lat = monster.location.Latitude;

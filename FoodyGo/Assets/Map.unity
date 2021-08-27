@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 15707883}
   - component: {fileID: 15707884}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 132506747}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &15707884
 MonoBehaviour:
@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c718a2d1d8da941438fb5286c51f5763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gpsLocationService: {fileID: 1696402290}
   monsterPrefab: {fileID: 5754609973423303398, guid: cf4288ad356a64c498059334b9906068, type: 3}
   monsterSpawnRate: 0.25
   latitudeSpawnOffset: 0.001
@@ -270,9 +269,8 @@ Transform:
   m_LocalPosition: {x: 0.21730518, y: -8.177206, z: -0.1493082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1839618645}
-  - {fileID: 1696402289}
   - {fileID: 15707883}
+  - {fileID: 944184096}
   m_Father: {fileID: 226393743}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -309,6 +307,7 @@ Transform:
   - {fileID: 1586048771}
   - {fileID: 1533287805}
   - {fileID: 963358095}
+  - {fileID: 9163050559893256072}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -370,7 +369,7 @@ PrefabInstance:
     - target: {fileID: 5864423870586462397, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: gpsLocationService
       value: 
-      objectReference: {fileID: 1696402290}
+      objectReference: {fileID: 0}
     - target: {fileID: 5864423870586462399, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: m_Name
       value: Map_Tile_0_1
@@ -517,7 +516,7 @@ PrefabInstance:
     - target: {fileID: 5864423870586462397, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: gpsLocationService
       value: 
-      objectReference: {fileID: 1696402290}
+      objectReference: {fileID: 0}
     - target: {fileID: 5864423870586462399, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: m_Name
       value: Map_Tile_1_-1
@@ -529,6 +528,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5864423870586462396, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
   m_PrefabInstance: {fileID: 637213506}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &944184095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 944184096}
+  - component: {fileID: 944184097}
+  m_Layer: 0
+  m_Name: GooglePlacesAPI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &944184096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944184095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 132506747}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &944184097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944184095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7b47eb702675d49a2c50c8bff44be3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeMarkerPrefab: {fileID: 8085329757357261726, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+  location:
+    Latitude: 37.55826
+    Longitude: 127.00019
+  visualDistance: 2000
+  type: 0
+  APIKey: AIzaSyC_sCv_xuVrmhpYaqME6P-8G32I5uNDX0s
 --- !u!1 &963358094
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,7 +736,7 @@ PrefabInstance:
     - target: {fileID: 5864423870586462397, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: gpsLocationService
       value: 
-      objectReference: {fileID: 1696402290}
+      objectReference: {fileID: 0}
     - target: {fileID: 5864423870586462399, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: m_Name
       value: Map_Tile_0_-1
@@ -757,7 +806,7 @@ PrefabInstance:
     - target: {fileID: 5864423870586462397, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: gpsLocationService
       value: 
-      objectReference: {fileID: 1696402290}
+      objectReference: {fileID: 0}
     - target: {fileID: 5864423870586462399, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: m_Name
       value: Map_Tile_-1_0
@@ -831,7 +880,7 @@ PrefabInstance:
     - target: {fileID: 5864423870586462397, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: gpsLocationService
       value: 
-      objectReference: {fileID: 1696402290}
+      objectReference: {fileID: 0}
     - target: {fileID: 5864423870586462399, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: m_Name
       value: Map_Tile_-1_1
@@ -905,7 +954,7 @@ PrefabInstance:
     - target: {fileID: 5864423870586462397, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: gpsLocationService
       value: 
-      objectReference: {fileID: 1696402290}
+      objectReference: {fileID: 0}
     - target: {fileID: 5864423870586462399, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: m_Name
       value: Map_Tile_1_1
@@ -1013,7 +1062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730e2ebedbcb1454bab936020db50d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gpsLocationService: {fileID: 1696402290}
 --- !u!1 &1508148432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,7 +1350,7 @@ PrefabInstance:
     - target: {fileID: 5864423870586462397, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: gpsLocationService
       value: 
-      objectReference: {fileID: 1696402290}
+      objectReference: {fileID: 0}
     - target: {fileID: 5864423870586462399, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: m_Name
       value: Map_Tile_-1_-1
@@ -1372,7 +1420,7 @@ PrefabInstance:
     - target: {fileID: 5864423870586462397, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: gpsLocationService
       value: 
-      objectReference: {fileID: 1696402290}
+      objectReference: {fileID: 0}
     - target: {fileID: 5864423870586462399, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: m_Name
       value: Map_Tile_1_0
@@ -1384,121 +1432,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5864423870586462396, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
   m_PrefabInstance: {fileID: 1656599696}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1696402288
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1696402289}
-  - component: {fileID: 1696402290}
-  m_Layer: 0
-  m_Name: GPS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1696402289
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696402288}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 132506747}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1696402290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696402288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bfdcc793b1b7ce49a592039723808d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DesiredAccuracyInMeters: 10
-  UpdateAccuracyInMeters: 10
-  MapTileScale: 30
-  MapTileSizePixels: 640
-  MapTileZoomLevel: 17
-  Simulating: 1
-  StartCoordinates:
-    Latitude: 37.55826
-    Longitude: 127.0002
-  Rate: 5
-  SimulationOffsets:
-  - {x: -0.0003, y: 0}
-  - {x: -0.0008, y: 0}
-  - {x: -0.0008, y: 0}
-  - {x: -0.0003, y: 0}
-  - {x: -0.0001, y: 0}
-  IsServiceStarted: 0
-  Latitude: 0
-  Longitude: 0
-  Altitude: 0
-  Accuracy: 0
-  Timestamp: 0
-  PlayerTimestamp: 0
-  mapCenter:
-    Latitude: 0
-    Longitude: 0
-  mapWorldCenter: {x: 0, y: 0, z: 0}
-  mapScale: {x: 0, y: 0}
---- !u!1 &1839618644
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1839618645}
-  - component: {fileID: 1839618646}
-  m_Layer: 0
-  m_Name: CUDLR
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1839618645
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839618644}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 132506747}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1839618646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839618644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2554b3ff7996402f9ad6253b4909cae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Port: 55055
 --- !u!1001 &1893658573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2339,7 +2272,7 @@ PrefabInstance:
     - target: {fileID: 5864423870586462397, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: gpsLocationService
       value: 
-      objectReference: {fileID: 1696402290}
+      objectReference: {fileID: 0}
     - target: {fileID: 5864423870586462399, guid: 9d0dc4009eb23b340a3bfc180fd5caac, type: 3}
       propertyPath: m_Name
       value: Map_Tile_0_0
@@ -2452,4 +2385,70 @@ RectTransform:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8565734762178625792, guid: e67d46d20740f5446b6a6c94a7967666, type: 3}
   m_PrefabInstance: {fileID: 218531715854196784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9163050559893256071
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 226393743}
+    m_Modifications:
+    - target: {fileID: 8085329757357261726, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+      propertyPath: m_Name
+      value: PlaceMarker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085329757357261726, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680241258213994626, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680241258213994626, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680241258213994626, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680241258213994626, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680241258213994626, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680241258213994626, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680241258213994626, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680241258213994626, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680241258213994626, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680241258213994626, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680241258213994626, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+--- !u!4 &9163050559893256072 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8680241258213994626, guid: c03437b366dfd0644a121dfbd6efbf76, type: 3}
+  m_PrefabInstance: {fileID: 9163050559893256071}
   m_PrefabAsset: {fileID: 0}

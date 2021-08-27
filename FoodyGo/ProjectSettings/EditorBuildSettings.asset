@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Inventory.unity
     guid: 9bab9585d43f7f24bb39a5c703191d33
+  - enabled: 1
+    path: Assets/Places.unity
+    guid: d40511eecc6a13f48ad79f00b07a3a98
   m_configObjects: {}
